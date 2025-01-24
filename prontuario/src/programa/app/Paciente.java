@@ -21,7 +21,7 @@ public abstract class Paciente {
 		Paciente.CONTADOR++;
 	}
 
-	public float calcularImc() {
+	public final float calcularImc() {
 		return peso / (altura * altura);
 	}
 
