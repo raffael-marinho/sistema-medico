@@ -11,6 +11,8 @@ public class Paciente {
 	int idade;
 	char sexo;
 
+	static int CONTADOR = 0;
+
 	public Paciente(String cpf, String nome, float peso, float altura, int idade, char sexo) {
 		this.cpf = cpf;
 		this.nome = nome;
@@ -18,6 +20,7 @@ public class Paciente {
 		this.altura = altura;
 		this.idade = idade;
 		this.sexo = sexo;
+		Paciente.CONTADOR++;
 	}
 
 	public float calcularImc() {
@@ -114,4 +117,11 @@ public class Paciente {
 		this.sexo = sexo;
 	}
 
+	public static int getCONTADOR() {
+		return CONTADOR;
+	}
+
+	public static void setCONTADOR(int cONTADOR) {
+		CONTADOR = cONTADOR;
+	}
 }
