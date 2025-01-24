@@ -1,10 +1,18 @@
 package programa.app;
 
+import java.time.LocalDateTime;
+
 public class PacienteFeminino extends Paciente {
 
-	public PacienteFeminino(String cpf, String nome, float peso, float altura, int idade) {
+	LocalDateTime dataMenarca;
+	LocalDateTime dataMenopausa;
+
+	public PacienteFeminino(String cpf, String nome, float peso, float altura, int idade, LocalDateTime menarca,
+			LocalDateTime menopausa) {
 		super(cpf, nome, peso, altura, idade);
-		// TODO Auto-generated constructor stub
+		
+		this.dataMenarca = menarca;
+		this.dataMenopausa = menopausa;
 	}
 
 	public float calcularMetabolismoBasal() {
@@ -15,4 +23,11 @@ public class PacienteFeminino extends Paciente {
 		else
 			return (10.5f * peso) + 596f;
 	}
+
+	@Override
+	public String toString() {
+		return "PacienteFeminino [cpf=" + cpf + ", nome=" + nome + ", peso=" + peso + ", altura=" + altura + ", idade="
+				+ idade + ", dataMenarca=" + dataMenarca + ", dataMenopausa=" + dataMenopausa + "]";
+	}
+	
 }
